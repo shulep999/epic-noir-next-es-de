@@ -1,0 +1,13 @@
+<theme>
+   <include>./../theme.xml</include>
+   <view name="system,gamelist">
+      <text name="system-metadata">
+         <text>${systemHardwareType}</text>
+      </text>
+   </view>
+   <view name="system">
+      <carousel name="system-carousel">
+         <text>All Games</text>
+      </carousel>
+   </view>
+</theme>

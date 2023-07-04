@@ -1,0 +1,38 @@
+<theme>
+   <include>./../theme.xml</include>
+   <view name="system,gamelist">
+      <text name="system-metadata">
+         <text>${systemHardwareType}</text>
+      </text>
+   </view>
+   <view name="system">
+      <carousel name="system-carousel">
+         <text>Collections</text>
+      </carousel>
+   </view>
+   <view name="gamelist">
+      <text name="custom-collection-name">
+         <origin>0 0</origin>
+         <size>0 0.044444444444444</size><!-- - 48 -->
+         <fontSize>0.044444444444444</fontSize><!-- 48 -->
+         <lineSpacing>1</lineSpacing>
+         <letterCase>uppercase</letterCase>
+         <metadata>systemFullname</metadata>
+         <color>cccccc</color>
+      </text>
+   </view>
+   <aspectRatio name="16:9">
+      <view name="gamelist">
+         <text name="custom-collection-name">
+            <pos>0.177083333333333 0.066666666666667</pos><!-- 340 72 -->
+         </text>
+      </view>
+   </aspectRatio>
+   <!--<aspectRatio name="16:10">
+      <view name="gamelist">
+         <text name="custom-collection-name">
+            <pos>0.477777777777778 0.002</pos>
+         </text>
+      </view>
+   </aspectRatio>-->
+</theme>

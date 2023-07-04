@@ -1,0 +1,515 @@
+<!--
+theme name:    Epic Noir (Revisited) (ES-DE Edition)
+created by:    c64-dev & Chicuelo
+ported from:   https://github.com/c64-dev/es-theme-epicnoir
+ported by:     anthonycaccese (change log can be found at https://github.com/anthonycaccese/epic-noir-revisited-es-de/blob/master/readme.md)
+license:       creative commons CC-BY-NC-SA
+-->
+
+<theme>
+
+   <include>./_inc/systems/metadata-global/_default.xml</include>
+   <include>./_inc/systems/metadata-custom/_default.xml</include>
+   <include>./_inc/systems/metadata-global/${system.theme}.xml</include>
+   <include>./_inc/systems/metadata-custom/${system.theme}.xml</include>
+
+   <variables>
+      <spacerImage>./_inc/images/space.png</spacerImage>
+      <fontLogo>./_inc/fonts/BebasNeue.otf</fontLogo>
+      <fontRegular>./_inc/fonts/Acre.otf</fontRegular>
+   </variables>
+
+   <view name="system,gamelist">
+      <image name="background">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <size>1 1</size>
+         <path>${spacerImage}</path>
+         <tile>true</tile>
+         <zIndex>0</zIndex>
+         <color>000000</color>
+      </image>
+      <image name="background-gradient">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <size>1 1</size>
+         <path>./_inc/images/background-gradient.svg</path>
+         <zIndex>2</zIndex>
+      </image>
+      <text name="system-metadata">
+         <fontSize>0.02037037037037</fontSize><!-- 22 -->
+         <fontPath>${fontRegular}</fontPath>
+         <color>8F8F8F</color>
+         <text>${systemReleaseYear}  ·  ${systemHardwareType}</text>
+      </text>
+      <helpsystem name="help">
+         <origin>0.5 0.5</origin>
+         <pos>0.5 0.944444444444444</pos><!-- 50% 1020 -->
+         <fontPath>${fontRegular}</fontPath>
+         <fontSize>0.024074074074074</fontSize><!-- 26 -->
+         <letterCase>capitalize</letterCase>
+         <textColor>666666</textColor>
+         <iconColor>666666</iconColor>
+      </helpsystem>
+   </view>
+
+   <view name="system">
+      <text name="system-metadata">
+         <origin>0 0</origin>
+      </text>
+      <text name="system-title-1-line,system-title-2-lines-row-1,system-title-2-lines-row-2">
+         <origin>0 0</origin>
+         <size>0 0</size>
+         <lineSpacing>1.25</lineSpacing>
+         <fontPath>${fontLogo}</fontPath>
+         <letterCase>uppercase</letterCase>
+         <color>ffffff</color>
+      </text>
+      <text name="system-title-1-line">
+         <fontSize>0.17962962962963</fontSize><!-- 194 -->
+      </text>
+      <text name="system-title-2-lines-row-1">
+         <fontSize>0.048148148148148</fontSize><!-- 52 -->
+      </text>
+      <text name="system-title-2-lines-row-2">
+         <fontSize>0.151851851851852</fontSize><!-- 164 -->
+      </text>
+      <text name="game-count">
+         <origin>0 0</origin>
+         <fontPath>${fontRegular}</fontPath>
+         <fontSize>0.031481481481481</fontSize><!-- 34 -->
+         <systemdata>gamecount</systemdata>
+         <letterCase>uppercase</letterCase>
+         <color>${systemColor}</color>
+      </text>
+      <text name="system-description">
+         <origin>0 0</origin>
+         <fontPath>${fontRegular}</fontPath>
+         <fontSize>0.02037037037037</fontSize><!-- 22 -->
+         <lineSpacing>1.18</lineSpacing>
+         <color>8F8F8F</color>
+         <text>${systemDescription}</text>
+         <verticalAlignment>top</verticalAlignment>
+         <container>true</container>
+         <containerScrollSpeed>0.3</containerScrollSpeed>
+      </text>
+      <image name="system-controller">
+         <origin>0 0.5</origin>
+         <path>./_inc/systems/controllers/${system.theme}.png</path>
+         <default>./_inc/systems/controllers/_default.png</default>
+         <interpolation>linear</interpolation>
+      </image>
+      <image name="system-carousel-selector">
+         <origin>0.5 0.5</origin>
+         <path>./_inc/images/system-carousel-selector.svg</path>
+         <color>${systemColor}</color>
+      </image>
+      <carousel name="system-carousel">
+         <origin>0.5 0.5</origin>
+         <color>ffffff00</color>
+         <maxItemCount>6</maxItemCount>
+         <itemScale>1</itemScale>
+         <itemTransitions>instant</itemTransitions>
+         <horizontalOffset>-0.4175</horizontalOffset>
+         <fastScrolling>true</fastScrolling>
+         <textColor>ffffff</textColor>
+         <fontPath>${fontRegular}</fontPath>
+         <fontSize>0.02037037037037</fontSize><!-- 22 -->
+         <lineSpacing>1</lineSpacing>
+         <textBackgroundColor>ff000000</textBackgroundColor>
+      </carousel>
+      <image name="system-carousel-background">
+         <origin>0.5 0.5</origin>
+         <path>./_inc/images/system-carousel.svg</path>
+      </image>
+      <gameselector name="system-art-selector">
+         <selection>random</selection>
+      </gameselector>
+      <image name="system-artwork">
+         <origin>0 0</origin>
+         <pos>0.25 0</pos>
+         <cropSize>1 1</cropSize>
+         <opacity>0.5</opacity>
+         <imageType>screenshot,fanart</imageType>
+         <gameselector>system-art-selector</gameselector>
+         <zIndex>1</zIndex>
+      </image>
+   </view>
+
+   <view name="gamelist">
+      <image name="system-highlight">
+         <path>${spacerImage}</path>
+         <tile>true</tile>
+         <color>${systemColor}</color>
+      </image>
+      <text name="system-title">
+         <origin>0 0</origin>
+         <size>0 0.044444444444444</size><!-- - 48 -->
+         <fontPath>${fontLogo}</fontPath>
+         <fontSize>0.044444444444444</fontSize><!-- 48 -->
+         <lineSpacing>1</lineSpacing>
+         <letterCase>uppercase</letterCase>
+         <color>ffffff</color>
+      </text>
+      <text name="custom-collection-name">
+         <fontPath>${fontLogo}</fontPath>
+      </text>
+      <text name="system-metadata">
+         <origin>1 0</origin>
+      </text>
+      <grid name="gamelist-grid">
+         <itemScale>1</itemScale>
+         <textColor>ffffff</textColor>
+         <textRelativeScale>0.8</textRelativeScale>
+         <fontPath>${fontRegular}</fontPath>
+         <fontSize>0.02</fontSize>
+         <lineSpacing>1</lineSpacing>
+         <selectorImage>./_inc/images/gamelist-grid-selector.svg</selectorImage>
+      </grid>
+      <video name="game-media">
+         <origin>0.5 0.5</origin>
+         <imageType>miximage,screenshot,titlescreen,fanart</imageType>
+         <delay>4</delay>
+      </video>
+      <text name="game-name">
+         <origin>0 0</origin>
+         <fontSize>0.038888888888889</fontSize><!-- 42 -->
+         <fontPath>${fontRegular}</fontPath>
+         <lineSpacing>1</lineSpacing>
+         <verticalAlignment>bottom</verticalAlignment>
+         <color>ffffff</color>
+         <metadata>name</metadata>
+      </text>
+      <badges name="badges">
+         <origin>0 0</origin>
+         <lines>1</lines>
+         <itemsPerLine>9</itemsPerLine>
+         <slots>all</slots>
+         <customBadgeIcon badge="folder">./_inc/images/badge-folder.svg</customBadgeIcon>
+         <customBadgeIcon badge="broken">./_inc/images/badge-broken.svg</customBadgeIcon>
+         <customBadgeIcon badge="completed">./_inc/images/badge-completed.svg</customBadgeIcon>
+         <customBadgeIcon badge="favorite">./_inc/images/badge-favorite.svg</customBadgeIcon>
+         <customBadgeIcon badge="kidgame">./_inc/images/badge-kidgame.svg</customBadgeIcon>
+         <customBadgeIcon badge="collection">./_inc/images/badge-collection.svg</customBadgeIcon>
+         <customBadgeIcon badge="controller">./_inc/images/badge-controller.svg</customBadgeIcon>
+         <customBadgeIcon badge="altemulator">./_inc/images/badge-altemulator.svg</customBadgeIcon>
+         <customBadgeIcon badge="manual">./_inc/images/badge-manual.svg</customBadgeIcon>
+         <badgeIconColor>${systemColor}</badgeIconColor>
+         <controllerSize>0.8</controllerSize>
+         <folderLinkSize>0.8</folderLinkSize>
+      </badges>
+      <rating name="game-rating">
+         <origin>0 0</origin>
+         <filledPath>./_inc/images/icon-star-filled.svg</filledPath>
+         <unfilledPath>./_inc/images/icon-star-unfilled.svg</unfilledPath>
+         <overlay>false</overlay>
+         <color>ffffff44</color>
+         <size>0 0.02962962962963</size><!-- x 32 -->
+      </rating>
+      <datetime name="game-release-date">
+         <origin>0 0</origin>
+         <metadata>releasedate</metadata>
+         <fontPath>${fontLogo}</fontPath>
+         <lineSpacing>1</lineSpacing>
+         <defaultValue>--</defaultValue>
+         <color>ffffff44</color>
+         <size>0 0.02962962962963</size><!-- x 32 -->
+         <fontSize>0.02962962962963</fontSize><!-- 32 -->
+      </datetime>
+      <text name="game-description">
+         <origin>0 0</origin>
+         <fontPath>${fontRegular}</fontPath>
+         <fontSize>0.026</fontSize><!-- 26 -->
+         <lineSpacing>1.18</lineSpacing>
+         <metadata>description</metadata>
+         <color>cccccc</color>
+         <container>true</container>
+         <containerStartDelay>8</containerStartDelay>
+         <containerScrollSpeed>0.6</containerScrollSpeed>
+      </text>
+      <!--<image name="game-background">
+         <origin>0 0</origin>
+         <pos>0.25 0</pos>
+         <cropSize>1 1</cropSize>
+         <opacity>0.05</opacity>
+         <saturation>0</saturation>
+         <imageType>screenshot,fanart</imageType>
+         <zIndex>1</zIndex>
+      </image>-->
+      <image name="background">
+         <color>222222</color>
+      </image>
+   </view>
+
+   <!-- 
+   ///
+   Grid Media Variants
+   ///
+   -->
+   <variant name="grid-media-marquee">
+      <view name="gamelist">
+         <grid name="gamelist-grid">
+            <imageType>marquee</imageType>
+            <imageFit>contain</imageFit>
+            <imageRelativeScale>0.8</imageRelativeScale>
+            <backgroundColor>111111</backgroundColor>
+            <selectorColor>ffffff55</selectorColor>
+            <unfocusedItemDimming>0.6</unfocusedItemDimming>
+         </grid>
+      </view>
+   </variant>
+   <variant name="grid-media-screenshot">
+      <view name="gamelist">
+         <grid name="gamelist-grid">
+            <imageType>screenshot</imageType>
+            <imageFit>cover</imageFit>
+            <imageRelativeScale>1</imageRelativeScale>
+            <backgroundColor>111111</backgroundColor>
+            <selectorColor>ffffff</selectorColor>
+            <unfocusedItemDimming>0.4</unfocusedItemDimming>
+         </grid>
+      </view>
+   </variant>
+   <variant name="grid-media-physicalmedia">
+      <view name="gamelist">
+         <grid name="gamelist-grid">
+            <imageType>physicalmedia</imageType>
+            <imageFit>contain</imageFit>
+            <imageRelativeScale>0.8</imageRelativeScale>
+            <backgroundColor>111111</backgroundColor>
+            <selectorColor>ffffff55</selectorColor>
+            <unfocusedItemDimming>0.6</unfocusedItemDimming>
+         </grid>
+      </view>
+   </variant>
+   <variant name="grid-media-cover">
+      <view name="gamelist">
+         <grid name="gamelist-grid">
+            <imageType>cover</imageType>
+            <imageFit>contain</imageFit>
+            <imageRelativeScale>0.9</imageRelativeScale>
+            <backgroundColor>111111</backgroundColor>
+            <selectorColor>ffffff55</selectorColor>
+            <unfocusedItemDimming>0.6</unfocusedItemDimming>
+         </grid>
+      </view>
+   </variant>
+   <variant name="grid-media-titlescreen">
+      <view name="gamelist">
+         <grid name="gamelist-grid">
+            <imageType>titlescreen</imageType>
+            <imageFit>cover</imageFit>
+            <imageRelativeScale>1</imageRelativeScale>
+            <backgroundColor>111111</backgroundColor>
+            <selectorColor>ffffff</selectorColor>
+            <unfocusedItemDimming>0.4</unfocusedItemDimming>
+         </grid>
+      </view>
+   </variant>
+
+
+   <!-- 
+   ///
+   Aspect Ratio Settings
+   ///
+   -->
+   <!-- Based on: 1920x1080 -->
+   <aspectRatio name="16:9">
+      <view name="system">
+         <text name="system-metadata">
+            <pos>0.102083333333333 0.092592592592593</pos><!-- 196 100 -->
+         </text>
+         <text name="system-title-1-line">
+            <pos>0.1 0.114814814814815</pos><!-- 192 124 -->
+         </text>
+         <text name="system-title-2-lines-row-1">
+            <pos>0.102083333333333 0.140740740740741</pos><!-- 196 152 -->
+         </text>
+         <text name="system-title-2-lines-row-2">
+            <pos>0.1 0.159259259259259</pos><!-- 192 172 -->
+         </text>
+         <image name="system-highlight">
+            <pos>0.049479166666667 0.342592592592593</pos><!-- 95 370 -->
+            <size>0.003125 0.161111111111111</size><!-- 6 174 -->
+            <path>${spacerImage}</path>
+            <tile>true</tile>
+            <color>${systemColor}</color>
+         </image>
+         <text name="game-count">
+            <pos>0.102083333333333 0.342592592592593</pos><!-- 196 370 -->
+         </text>
+         <text name="system-description">
+            <pos>0.102083333333333 0.425925925925926</pos><!-- 196 460 -->
+            <size>0.260416666666667 0.083333333333333</size><!-- 500 90 -->
+         </text>
+         <image name="system-controller">
+            <pos>0.102083333333333 0.648148148148148</pos><!-- 196 700 -->
+            <maxSize>0.208333333333333 0.203703703703704</maxSize><!-- 350 250 -->
+         </image>
+         <image name="system-carousel-selector">
+            <pos>0.5 0.842592592592593</pos><!-- 960 910 -->
+            <size>0.833333333333333 0.092592592592593</size><!-- 1600 100 -->
+         </image>
+         <carousel name="system-carousel">
+            <pos>0.5 0.842592592592593</pos><!-- 960 910 -->
+            <size>0.8125 0.055555555555556</size><!-- 1560 60 -->
+            <itemSize>0.109375 0.055555555555556</itemSize><!-- 210 60 -->
+         </carousel>
+         <image name="system-carousel-background">
+            <pos>0.5 0.842592592592593</pos><!-- 960 910 -->
+            <size>0.833333333333333 0.092592592592593</size><!-- 1600 100 -->
+         </image>
+      </view>
+      <view name="gamelist">
+         <image name="system-highlight">
+            <pos>0.052083333333333 0.074074074074074</pos><!-- 100 80 -->
+            <size>0.003125 0.031481481481481</size><!-- 6 34 -->
+         </image>
+         <text name="system-title">
+            <pos>0.067708333333333 0.066666666666667</pos><!-- 130 72 -->
+         </text>
+         <text name="system-metadata">
+            <pos>0.579166666666667 0.077777777777778</pos><!-- 1220 84 -->
+         </text>
+         <grid name="gamelist-grid">
+            <pos>0.052083333333333 0.157407407407407</pos><!-- 100 170 -->
+            <size>0.527083333333333 0.725925925925926</size><!-- 1012 784 -->
+            <itemSize>0.158333333333333 0.211111111111111</itemSize><!-- 304 228 -->
+            <itemSpacing>0.026041666666667 -1</itemSpacing><!-- 50 -->
+         </grid>
+         <video name="game-media">
+            <pos>0.802083333333333 0.259259259259259</pos><!-- 1540 280 -->
+            <cropSize>0.291666666666667 0.388888888888889</cropSize><!-- 560 420 -->
+         </video>
+         <text name="game-name">
+            <pos>0.65625 0.481481481481481</pos><!-- 1260 520 -->
+            <size>0.291666666666667 0.083333333333333</size><!-- 560 84 -->
+         </text>
+         <badges name="badges">
+            <pos>0.65625 0.581481481481481</pos><!-- 1260 628 -->
+            <size>0.291666666666667 0.02962962962963</size><!-- 560 32 -->
+            <itemMargin>0.005208333333333 -1</itemMargin>
+         </badges>
+         <rating name="game-rating">
+            <pos>0.65625 0.637037037037037</pos><!-- 1260 688 -->
+         </rating>
+         <datetime name="game-release-date">
+            <pos>0.744791666666667 0.637037037037037</pos><!-- 1430 688 -->
+         </datetime>
+         <text name="game-description">
+            <origin>0 1</origin>
+            <pos>0.65625 0.883333333333333</pos><!-- 1260 954 -->
+            <size>0.291666666666667 0.2</size><!-- 560 190 -->
+         </text>
+      </view>
+   </aspectRatio>
+
+   <!-- Based on: 1728x1080 -->
+   <aspectRatio name="16:10">
+      <view name="system">
+         <text name="system-metadata">
+            <pos>0.05787037037037 0.092592592592593</pos><!-- 100 100 -->
+         </text>
+         <text name="system-title-1-line">
+            <pos>0.055555555555556 0.114814814814815</pos><!-- 96 124 -->
+         </text>
+         <text name="system-title-2-lines-row-1">
+            <pos>0.05787037037037 0.140740740740741</pos><!-- 100 152 -->
+         </text>
+         <text name="system-title-2-lines-row-2">
+            <pos>0.055555555555556 0.159259259259259</pos><!-- 96 172 -->
+         </text>
+         <text name="game-count">
+            <pos>0.05787037037037 0.342592592592593</pos><!-- 100 370 -->
+         </text>
+         <text name="system-description">
+            <pos>0.05787037037037 0.425925925925926</pos><!-- 100 460 -->
+            <size>0.289351851851852 0.083333333333333</size><!-- 500 90 -->
+         </text>
+         <image name="system-controller">
+            <pos>0.05787037037037 0.648148148148148</pos><!-- 100 700 -->
+            <maxSize>0.202546296296296 0.203703703703704</maxSize><!-- 350 250 -->
+         </image>
+         <image name="system-carousel-selector">
+            <pos>0.5 0.842592592592593</pos><!-- 50% 910 -->
+            <size>0.925925925925926 0.092592592592593</size><!-- 1600 100 -->
+         </image>
+         <carousel name="system-carousel">
+            <pos>0.5 0.842592592592593</pos><!-- 50% 910 -->
+            <size>0.902777777777778 0.055555555555556</size><!-- 1560 60 -->
+            <itemSize>0.121527777777778 0.055555555555556</itemSize><!-- 210 60 -->
+         </carousel>
+         <image name="system-carousel-background">
+            <pos>0.5 0.842592592592593</pos><!-- 50% 910 -->
+            <size>0.925925925925926 0.092592592592593</size><!-- 1600 100 -->
+         </image>
+      </view>
+      <view name="gamelist">
+         <image name="system-highlight">
+            <pos>0.052083333333333 0.074074074074074</pos><!-- 100 80 -->
+            <size>0.003125 0.031481481481481</size><!-- 6 34 -->
+         </image>
+         <text name="system-title">
+            <pos>0.067708333333333 0.066666666666667</pos><!-- 130 72 -->
+         </text>
+         <text name="system-metadata">
+            <pos>0.579166666666667 0.077777777777778</pos><!-- 1220 84 -->
+         </text>
+         <grid name="gamelist-grid">
+            <pos>0.052083333333333 0.157407407407407</pos><!-- 100 170 -->
+            <size>0.527083333333333 0.725925925925926</size><!-- 1012 784 -->
+            <itemSize>0.158333333333333 0.211111111111111</itemSize><!-- 304 228 -->
+            <itemSpacing>0.026041666666667 -1</itemSpacing><!-- 50 -->
+         </grid>
+         <video name="game-media">
+            <pos>0.802083333333333 0.259259259259259</pos><!-- 1540 280 -->
+            <cropSize>0.291666666666667 0.388888888888889</cropSize><!-- 560 420 -->
+         </video>
+         <text name="game-name">
+            <pos>0.65625 0.481481481481481</pos><!-- 1260 520 -->
+            <size>0.291666666666667 0.083333333333333</size><!-- 560 84 -->
+         </text>
+         <badges name="badges">
+            <pos>0.65625 0.581481481481481</pos><!-- 1260 628 -->
+            <size>0.291666666666667 0.02962962962963</size><!-- 560 32 -->
+            <itemMargin>0.005208333333333 -1</itemMargin>
+         </badges>
+         <rating name="game-rating">
+            <pos>0.65625 0.637037037037037</pos><!-- 1260 688 -->
+         </rating>
+         <datetime name="game-release-date">
+            <pos>0.744791666666667 0.637037037037037</pos><!-- 1430 688 -->
+         </datetime>
+         <text name="game-description">
+            <origin>0 1</origin>
+            <pos>0.65625 0.883333333333333</pos><!-- 1260 954 -->
+            <size>0.291666666666667 0.2</size><!-- 560 190 -->
+         </text>
+      </view>
+   </aspectRatio>
+
+   <view name="all">
+      <sound name="systembrowse">
+         <path>./_inc/sounds/systembrowse.wav</path>
+      </sound>
+      <sound name="quicksysselect">
+         <path>./_inc/sounds/quicksysselect.wav</path>
+      </sound>
+      <sound name="select">
+         <path>./_inc/sounds/select.wav</path>
+      </sound>
+      <sound name="back">
+         <path>./_inc/sounds/back.wav</path>
+      </sound>
+      <sound name="scroll">
+         <path>./_inc/sounds/scroll.wav</path>
+      </sound>
+      <sound name="favorite">
+         <path>./_inc/sounds/favorite.wav</path>
+      </sound>
+      <sound name="launch">
+         <path>./_inc/sounds/launch.wav</path>
+      </sound>
+   </view>
+
+</theme>

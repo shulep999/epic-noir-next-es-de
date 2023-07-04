@@ -1,0 +1,16 @@
+<theme>
+   <include>./../theme.xml</include>
+   <view name="system,gamelist">
+      <text name="system-metadata">
+         <text>${systemHardwareType}</text>
+      </text>
+   </view>
+   <view name="system">
+      <carousel name="system-carousel">
+         <text>Last Played</text>
+      </carousel>
+      <gameselector name="system-art-selector">
+         <selection>lastplayed</selection>
+      </gameselector>
+   </view>
+</theme>
