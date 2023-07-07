@@ -179,6 +179,7 @@ license:       creative commons CC-BY-NC-SA
          <verticalAlignment>bottom</verticalAlignment>
          <color>ffffff</color>
          <metadata>name</metadata>
+         <horizontalAlignment>center</horizontalAlignment>
       </text>
       <badges name="badges">
          <origin>0 0</origin>
@@ -197,32 +198,44 @@ license:       creative commons CC-BY-NC-SA
          <badgeIconColor>${systemColor}</badgeIconColor>
          <controllerSize>0.8</controllerSize>
          <folderLinkSize>0.8</folderLinkSize>
+         <horizontalAlignment>center</horizontalAlignment>
       </badges>
       <rating name="game-rating">
-         <origin>0 0</origin>
+         <origin>0.5 0.5</origin>
          <filledPath>./_inc/images/icon-star-filled.svg</filledPath>
          <unfilledPath>./_inc/images/icon-star-unfilled.svg</unfilledPath>
          <overlay>false</overlay>
-         <color>ffffff44</color>
-         <size>0 0.02962962962963</size><!-- x 32 -->
+         <color>ffffff88</color>
+         <size>0 0.02037037037037</size><!-- x 22 -->
       </rating>
       <datetime name="game-release-date">
-         <origin>0 0</origin>
+         <origin>0.5 0.5</origin>
          <metadata>releasedate</metadata>
-         <fontPath>${fontLogo}</fontPath>
+         <fontPath>${fontRegular}</fontPath>
          <lineSpacing>1</lineSpacing>
          <defaultValue>--</defaultValue>
-         <color>ffffff44</color>
-         <size>0 0.02962962962963</size><!-- x 32 -->
-         <fontSize>0.02962962962963</fontSize><!-- 32 -->
+         <color>ffffff88</color>
+         <size>0 0.02037037037037</size><!-- x 22 -->
+         <fontSize>0.02037037037037</fontSize><!-- 22 -->
       </datetime>
+      <text name="game-publisher">
+         <origin>0.5 0.5</origin>
+         <metadata>publisher</metadata>
+         <fontPath>${fontRegular}</fontPath>
+         <lineSpacing>1</lineSpacing>
+         <defaultValue>--</defaultValue>
+         <color>ffffff88</color>
+         <size>0 0.02037037037037</size><!-- x 22 -->
+         <fontSize>0.02037037037037</fontSize><!-- 22 -->
+         <horizontalAlignment>center</horizontalAlignment>
+      </text>
       <text name="game-description">
          <origin>0 0</origin>
          <fontPath>${fontRegular}</fontPath>
          <fontSize>0.026</fontSize><!-- 26 -->
          <lineSpacing>1.18</lineSpacing>
          <metadata>description</metadata>
-         <color>cccccc</color>
+         <color>dddddd</color>
          <container>true</container>
          <containerStartDelay>8</containerStartDelay>
          <containerScrollSpeed>0.6</containerScrollSpeed>
@@ -390,12 +403,23 @@ license:       creative commons CC-BY-NC-SA
             <size>0.291666666666667 0.02962962962963</size><!-- 560 32 -->
             <itemMargin>0.005208333333333 -1</itemMargin>
          </badges>
+         <image name="game-metadata-background">
+            <path>./_inc/images/gamelist-metadata-background.svg</path>
+            <color>000000dd</color>
+            <pos>0.65625 0.62962962962963</pos><!-- 1260 680 -->
+            <size>0.291666666666667 0.037037037037037</size><!-- 560 40 -->
+            <metadataElement>true</metadataElement>
+         </image>
          <rating name="game-rating">
-            <pos>0.65625 0.637037037037037</pos><!-- 1260 688 -->
+            <pos>0.703125 0.648148148148148</pos><!-- 1350 700 -->
          </rating>
          <datetime name="game-release-date">
-            <pos>0.744791666666667 0.637037037037037</pos><!-- 1430 688 -->
+            <pos>0.802083333333333 0.648148148148148</pos><!-- 1540 700 -->
          </datetime>
+         <text name="game-publisher">
+            <size>0.083333333333333 0.02037037037037</size><!-- 160 22 -->
+            <pos>0.901041666666667 0.647222222222222</pos><!-- 1730 699 -->
+         </text>
          <text name="game-description">
             <origin>0 1</origin>
             <pos>0.65625 0.883333333333333</pos><!-- 1260 954 -->
