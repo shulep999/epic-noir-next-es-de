@@ -28,11 +28,11 @@
          </text>
       </view>
    </aspectRatio>
-   <!--<aspectRatio name="16:10">
+   <aspectRatio name="16:10">
       <view name="gamelist">
          <text name="custom-collection-name">
-            <pos>0.477777777777778 0.002</pos>
+            <pos>0.196759259259259 0.066666666666667</pos><!-- 340 72 -->
          </text>
       </view>
-   </aspectRatio>-->
+   </aspectRatio>
 </theme>
