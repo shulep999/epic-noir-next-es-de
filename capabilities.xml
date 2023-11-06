@@ -68,7 +68,7 @@
    </variant>
    <variant name="gamelist-grid-basic">
       <label>Grid: No Metadata</label>
-      <selectable>false</selectable>
+      <selectable>true</selectable>
    </variant>
 
 </themeCapabilities>
